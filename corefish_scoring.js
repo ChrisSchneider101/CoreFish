@@ -1,10 +1,12 @@
 
 var size_input = document.getElementById("size_input");
+var size_measurement_input = document.getElementsByName("size_measurement_input");
 var stars_input = document.getElementsByName("stars_input");
 var search_input = document.getElementById("search_input");
 var fish_container = document.getElementById("fish_container");
 
 var size_value = 0;
+var size_measurement_value = 1;
 var stars_value = 0;
 var search_value = "";
 
@@ -17,7 +19,7 @@ var search_value = "";
 // }
 
 function onChangeSizeInput() {
-	var size = parseInt(document.getElementById("size_input").value);
+	var size = parseFloat(document.getElementById("size_input").value);
 	if (Number.isNaN(size)) size = 0;
 	size_value = size;
 	console.log("### size changed to " + size_value);
@@ -60,6 +62,16 @@ function onChangeSearchInput() {
 	updateFishContainer();
 }
 
+function onChangeSizeMeasurementInput() {
+	var size_mult;
+	for (i=0; i<size_measurement_input.length; i++) {
+		if (size_measurement_input[i].checked) size_mult = parseInt(size_measurement_input[i].value);
+	}
+	size_measurement_value = size_mult;
+	console.log("### size measurement changed to " + size_measurement_value);
+	updateFishContainer();
+}
+
 // fish container
 function updateFishContainer() {
 	fish_container.innerHTML = "";
@@ -74,7 +86,7 @@ function updateFishContainer() {
 			var fish_name = document.createElement("span");
 			fish_name.innerText = fish[i].name;
 			var fish_points = document.createElement("span");
-			var points = size_value;
+			var points = size_value * size_measurement_value;
 			console.log(fish[i].name + "- base points: " + points);
 			if ((fish[i].name == "Whale") || (fish[i].name == "Leedsichthys")) {
 				points = points / 2;
@@ -86,12 +98,17 @@ function updateFishContainer() {
 					console.log(fish[i].name + "- freshwater or misc multiplier (1.5): " + points);
 				}
 			}
+			else if (fish[i].water == "Junk") {
+				points = 0;
+				console.log(fish[i].name + "- junk multiplier (0): " + points);
+			}
 			points = points * parseFloat(fish[i].unique_mult);
 			console.log(fish[i].name + "- unique mult (" + fish[i].unique_mult + "): " + points);
 			var star_mult = (1 + (0.5 * stars_value));
 			//var star_mult = stars_value;
 			points = points * star_mult;
 			console.log(fish[i].name + "- star mult (" + star_mult + "): " + points);
+			points = Math.floor(points);
 			fish_points.innerText = points;
 
 
@@ -111,6 +128,9 @@ size_input.addEventListener("input",onChangeSizeInput);
 size_input.addEventListener("change",onChangeSizeInput);
 for (i=0; i<stars_input.length; i++) {
 	stars_input[i].addEventListener("click",onChangeStarInput);
+}
+for (i=0; i<size_measurement_input.length; i++) {
+	size_measurement_input[i].addEventListener("click",onChangeSizeMeasurementInput);
 }
 
 
