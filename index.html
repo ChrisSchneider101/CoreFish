@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>corefish flip</title>
+	<style>
+		body {
+			background-color: rgb(56, 62, 78);
+			color: whitesmoke;
+			font-family: 'Trebuchet MS', sans-serif;
+		}
+		#size_input {
+			width: 6em;
+		}
+		.radio_stars_container {
+            display: flex;
+            justify-content: space-around;
+        }
+		.radio_stars {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		.inputs_container {
+			display: flex;
+			flex-direction: row;
+            align-items: center;
+		}
+		#fish_container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+            align-items: center;
+		}
+		.fish_item {
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="inputs_container">
+		<div>
+			<img src="./img/era.png">
+		</div>
+		<div style="padding-left:6em">
+			size:&nbsp;
+			<input type="number" id="size_input"/>cm
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<!--stars&nbsp;<input type="number" is="stars_input"/>-->
+		<div class="radio_stars_container">
+			stars:&nbsp;
+			<label class="radio_stars">
+				<input type="radio" id="0_star_input" name="stars_input" value="0" checked>
+				<span>0</span>
+			</label><label class="radio_stars">
+				<input type="radio" id="1_star_input" name="stars_input" value="1">
+				<span>1</span>
+			</label><label class="radio_stars">
+				<input type="radio" id="2_star_input" name="stars_input" value="2">
+				<span>2</span>
+			</label><label class="radio_stars">
+				<input type="radio" id="3_star_input" name="stars_input" value="3">
+				<span>3</span>
+			</label><label class="radio_stars">
+				<input type="radio" id="4_star_input" name="stars_input" value="4">
+				<span>4</span>
+			</label><label class="radio_stars">
+				<input type="radio" id="5_star_input" name="stars_input" value="5">
+				<span>5</span>
+			</label>
+		</div>
+		<!--(<span id="star_selection_reminder"></span>)-->
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<div>
+			search:&nbsp;
+			<input type="text" id="search_input">
+		</div>
+	</div>
+	<br />
+	<div id="fish_container">
+
+	</div>
+	<script src="./fish.js"></script>
+	<script src="./corefish_scoring.js"></script>
+</body>
+</html>
