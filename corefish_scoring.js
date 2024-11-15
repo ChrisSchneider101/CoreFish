@@ -1,22 +1,22 @@
 
+var page_version = "11.15.24 (2)"
+
+document.getElementById("fish_set_version").innerText = fish_set_version;
+document.getElementById("page_version").innerText = page_version;
+
 var size_input = document.getElementById("size_input");
 var size_measurement_input = document.getElementsByName("size_measurement_input");
 var stars_input = document.getElementsByName("stars_input");
 var search_input = document.getElementById("search_input");
+var calc_input = document.getElementById("calc_input");
 var fish_container = document.getElementById("fish_container");
 
 var size_value = 0;
 var size_measurement_value = 1;
 var stars_value = 0;
 var search_value = "";
+var calc_value = false;
 
-// size
-// function getSizeInput() {
-// 	var size = parseInt(document.getElementById("size_input").value);
-// 	if (Number.isNaN(size)) size = 0;
-// 	//console.log("return size: " + size);
-// 	return size;
-// }
 
 function onChangeSizeInput() {
 	var size = parseFloat(document.getElementById("size_input").value);
@@ -25,17 +25,6 @@ function onChangeSizeInput() {
 	console.log("### size changed to " + size_value);
 	updateFishContainer();
 }
-
-
-// stars
-// function getStarInput() {
-// 	var stars;
-// 	for (i=0; i<stars_input.length; i++) {
-// 		if (stars_input[i].checked) stars = parseInt(stars_input[i].value);
-// 	}
-// 	//console.log("return stars: " + stars);
-// 	return stars;
-// }
 
 function onChangeStarInput() {
 	var stars;
@@ -47,20 +36,20 @@ function onChangeStarInput() {
 	updateFishContainer();
 }
 
-
-// search
-// function getSearchInput() {
-// 	var search = search_input.value;
-// 	//console.log("return search: " + search);
-// 	return search;
-// }
-
 function onChangeSearchInput() {
 	var search = search_input.value;
 	search_value = search;
 	console.log("### search changed to " + search_input.value);
 	updateFishContainer();
 }
+
+function onChangeCalcInput() {
+	var checked = calc_input.checked;
+	calc_value = checked;
+	console.log("### calc selection changed to " + calc_input.checked);
+	updateFishContainer();
+}
+
 
 function onChangeSizeMeasurementInput() {
 	var size_mult;
@@ -76,9 +65,7 @@ function onChangeSizeMeasurementInput() {
 function updateFishContainer() {
 	fish_container.innerHTML = "";
 	for (i=0; i<fish.length; i++) {
-		//console.log(fish[i]);
 		if (fish[i].name.toLowerCase().includes(search_value.toLowerCase())) {
-			//console.log(fish[i].name);
 			var fish_div = document.createElement("div");
 			fish_div.className = "fish_item";
 			var fish_img = document.createElement("img");
@@ -123,9 +110,10 @@ function updateFishContainer() {
 			fish_div.appendChild(fish_img);
 			fish_div.appendChild(fish_name);
 			fish_div.appendChild(fish_points);
-			fish_div.appendChild(fish_points_calc);
+			if (calc_value) fish_div.appendChild(fish_points_calc);
+
 			fish_div.addEventListener("click", function(event) {
-				console.log("hit");
+				//console.log("hit");
 				var fish_item = event.target.closest('.fish_item');
 				console.log(fish_item);
 			})
@@ -133,12 +121,12 @@ function updateFishContainer() {
 			fish_container.appendChild(fish_div);
 		}
 	}
-	// fish_container
 }
 
 
 // input event listeners
 search_input.addEventListener("input",onChangeSearchInput);
+calc_input.addEventListener("input",onChangeCalcInput);
 size_input.addEventListener("input",onChangeSizeInput);
 size_input.addEventListener("change",onChangeSizeInput);
 for (i=0; i<stars_input.length; i++) {

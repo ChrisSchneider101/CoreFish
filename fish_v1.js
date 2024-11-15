@@ -1,3 +1,5 @@
+fish_set_version="11.03.24"
+
 fish = [
 	{
 	  "name": "Alligator",

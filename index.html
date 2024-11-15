@@ -36,12 +36,21 @@
             align-items: center;
 			padding: 10px;
 		}
+		.version_text {
+			text-align: left;
+			font-family: monospace;
+			font-size: 10px;
+		}
 	</style>
 </head>
 <body>
 	<div class="inputs_container">
-		<div>
+		<div class="radio_stars">
 			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true">
+			<div class="version_text">
+				<span>fish_updated:</span><span id="fish_set_version"></span><br />
+				<span>page_updated:</span><span id="page_version"></span>
+			</div>
 		</div>
 		<div style="padding-left:6em">
 			size:&nbsp;
@@ -78,6 +87,11 @@
 		<div>
 			search:&nbsp;
 			<input type="text" id="search_input">
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="radio_stars">
+			<div>show steps?</div>
+			<input type="checkbox" id="calc_input">
 		</div>
 	</div>
 	<br />
