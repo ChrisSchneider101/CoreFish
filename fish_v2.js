@@ -1,5 +1,12 @@
 fish_set_version="11.15.24"
 
+saltwater_mult = 1;
+freshwater_mult = 2;
+rain_mult = 2;
+alien_mult = 2;
+void_mult = 2;
+junk_mult = 0;
+
 fish = [
 	{
 	  "name": "Alligator",

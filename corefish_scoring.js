@@ -1,5 +1,5 @@
 
-var page_version = "11.15.24 (4)"
+var page_version = "11.15.24 (6)"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;
@@ -66,6 +66,7 @@ function updateFishContainer() {
 	fish_container.innerHTML = "";
 	for (i=0; i<fish.length; i++) {
 		if (fish[i].name.toLowerCase().includes(search_value.toLowerCase())) {
+			// create elements
 			var fish_div = document.createElement("div");
 			fish_div.className = "fish_item";
 			var fish_img = document.createElement("img");
@@ -75,38 +76,88 @@ function updateFishContainer() {
 			var fish_points = document.createElement("span");
 			var fish_points_calc = document.createElement("span");
 			fish_points_calc.style.textAlign = "justified";
+			fish_points_calc.style.color = "grey";
+
+			// base points from size
 			var points = size_value * size_measurement_value;
 			fish_points_calc.innerHTML = "Base value: (" + points + ")";
 			console.log(fish[i].name + "- base points: " + points);
+
+			// whale / leed deduction
 			if ((fish[i].name == "Whale") || (fish[i].name == "Leedsichthys")) {
 				points = points / 2;
 				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Leed/Whale: x0.5 (" + Math.floor(points) + ")";
 				console.log(fish[i].name + "- half base points for whale/leedsichthys: " + points);
 			}
-			if ((fish[i].water == "Freshwater") || (fish[i].water == "Rain") || (fish[i].water == "Alien")) {
-				if (fish[i].name != "Leedsichthys") {
-					points = points * 2.0;
-					fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Fr.Wa./Rain: x2 (" + Math.floor(points) + ")";
-					console.log(fish[i].name + "- freshwater or misc multiplier (2.0): " + points);
-				}
+
+			// water bonus
+			var water_mult = 1;
+			var water_tag = "";
+			var water_pool = "";
+			switch (fish[i].water) {
+				case "Saltwater":
+					water_mult = saltwater_mult;
+					water_tag = "Sa.Wa";
+					water_pool = "Salt";
+					break;
+				case "Freshwater":
+					water_mult = freshwater_mult;
+					water_tag = "Fr.Wa";
+					water_pool = "Fresh";
+					break;
+				case "Rain":
+					water_mult = rain_mult;
+					water_tag = "Rain";
+					water_pool = "Misc";
+					break;
+				case "Alien":
+					water_mult = alien_mult;
+					water_tag = "Alien";
+					water_pool = "Misc";
+					break;
+				case "Void":
+					water_mult = void_mult;
+					water_tag = "Void";
+					water_pool = "Misc";
+					break;
+				case "Junk":
+					water_mult = junk_mult;
+					water_tag = "Junk";
+					water_pool = "Misc";
+					break;
+				default:
+					console.log("INVALID WATER SOURCE")
+					water_mult = -999;
+					water_tag = "where am i";
+					water_pool = "is there water here";
+					break;
 			}
-			else if (fish[i].water == "Junk") {
-				points = 0;
-				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Junk: x0.0 (" + /*Math.floor(points)*/"gross" + ")";
-				console.log(fish[i].name + "- junk multiplier (0): " + points);
+			points = points * water_mult;
+			if (water_mult != 1) {
+				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />" + water_pool + ": x" + water_mult + " (" + Math.floor(points) + ")";
 			}
+			console.log(fish[i].name + "- water mult (" + water_mult + "): " + points + " (" + water_tag + ")");	
+
+			// unique bonus
 			points = points * parseFloat(fish[i].unique_mult);
 			if (parseFloat(fish[i].unique_mult) != 1) {
-				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Unique Mult: x" + parseFloat(fish[i].unique_mult) + " (" + Math.floor(points) + ")";
+				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Special: x" + parseFloat(fish[i].unique_mult) + " (" + Math.floor(points) + ")";
 			}
 			console.log(fish[i].name + "- unique mult (" + fish[i].unique_mult + "): " + points);
+
+			// star bonus
 			var star_mult = (1 + (0.5 * stars_value));
-			//var star_mult = stars_value;
 			points = points * star_mult;
+			if (star_mult != 1) {
+				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Stars: x" + star_mult + " (" + Math.floor(points) + ")";
+			}
 			console.log(fish[i].name + "- star mult (" + star_mult + "): " + points);
+			
+			// round, finalize, and populate string
 			points = Math.floor(points);
 			fish_points.innerHTML = "<b>" + points + "</b>";
 
+			// append elements
 			fish_div.appendChild(fish_img);
 			fish_div.appendChild(fish_name);
 			fish_div.appendChild(fish_points);
