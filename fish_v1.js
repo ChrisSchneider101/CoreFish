@@ -461,11 +461,4 @@ fish = [
 	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/91/Unidentified_Fish_Object.png/100px-Unidentified_Fish_Object.png"
 	}
-	,
-	{
-		"name": "CREATURE",
-		"water": "Void",
-		"unique_mult": 1,
-		"img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
-	  }
 ]
