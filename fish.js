@@ -10,7 +10,7 @@ fish = [
 	{
 	  "name": "Axolotl",
 	  "water": "Freshwater",
-	  "unique_mult": 5,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/91/Axolotl.png/100px-Axolotl.png"
 	},
 	{
@@ -34,7 +34,7 @@ fish = [
 	{
 	  "name": "Bull Shark",
 	  "water": "Freshwater",
-	  "unique_mult": 1,
+	  "unique_mult": 3,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/90/Bull_Shark.png/100px-Bull_Shark.png"
 	},
 	{
@@ -88,7 +88,7 @@ fish = [
 	{
 	  "name": "Golden Bass",
 	  "water": "Freshwater",
-	  "unique_mult": 5,
+	  "unique_mult": 10,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/b4/Golden_Bass.png/100px-Golden_Bass.png"
 	},
 	{
@@ -148,7 +148,7 @@ fish = [
 	{
 	  "name": "Pupfish",
 	  "water": "Freshwater",
-	  "unique_mult": 5,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/f/fd/Pupfish.png/100px-Pupfish.png"
 	},
 	{
@@ -220,7 +220,7 @@ fish = [
 	{
 	  "name": "Coelacanth",
 	  "water": "Saltwater",
-	  "unique_mult": 5,
+	  "unique_mult": 4,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/4/4b/Coelacanth.png/100px-Coelacanth.png"
 	},
 	{
@@ -250,7 +250,7 @@ fish = [
 	{
 	  "name": "Great White Shark",
 	  "water": "Saltwater",
-	  "unique_mult": 1,
+	  "unique_mult": 3,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/4/46/Great_White_Shark.png/100px-Great_White_Shark.png"
 	},
 	{
@@ -262,7 +262,7 @@ fish = [
 	{
 	  "name": "Hammerhead Shark",
 	  "water": "Saltwater",
-	  "unique_mult": 1,
+	  "unique_mult": 1.5,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/4/4f/Hammerhead_Shark.png/100px-Hammerhead_Shark.png"
 	},
 	{
@@ -292,7 +292,7 @@ fish = [
 	{
 	  "name": "Man O' War",
 	  "water": "Saltwater",
-	  "unique_mult": 3,
+	  "unique_mult": 5,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/e/e4/Man_O%27_War.png/100px-Man_O%27_War.png"
 	},
 	{
@@ -460,14 +460,13 @@ fish = [
 	{
 	  "name": "Unidentified Fish Object",
 	  "water": "Alien",
-	  "unique_mult": 8,
+	  "unique_mult": 4,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/91/Unidentified_Fish_Object.png/100px-Unidentified_Fish_Object.png"
-	}
-	,
+	},
 	{
 		"name": "CREATURE",
 		"water": "Void",
 		"unique_mult": 1,
 		"img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
-	  }
+	}
 ]

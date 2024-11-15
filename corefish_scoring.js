@@ -85,9 +85,9 @@ function updateFishContainer() {
 			}
 			if ((fish[i].water == "Freshwater") || (fish[i].water == "Rain") || (fish[i].water == "Alien")) {
 				if (fish[i].name != "Leedsichthys") {
-					points = points * 1.5;
-					fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Fr.Wa./Rain: x1.5 (" + Math.floor(points) + ")";
-					console.log(fish[i].name + "- freshwater or misc multiplier (1.5): " + points);
+					points = points * 2.0;
+					fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Fr.Wa./Rain: x2.0 (" + Math.floor(points) + ")";
+					console.log(fish[i].name + "- freshwater or misc multiplier (2.0): " + points);
 				}
 			}
 			else if (fish[i].water == "Junk") {
