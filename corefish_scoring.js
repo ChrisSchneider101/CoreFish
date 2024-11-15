@@ -1,5 +1,5 @@
 
-var page_version = "11.15.24 (2)"
+var page_version = "11.15.24 (4)"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;
@@ -86,7 +86,7 @@ function updateFishContainer() {
 			if ((fish[i].water == "Freshwater") || (fish[i].water == "Rain") || (fish[i].water == "Alien")) {
 				if (fish[i].name != "Leedsichthys") {
 					points = points * 2.0;
-					fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Fr.Wa./Rain: x2.0 (" + Math.floor(points) + ")";
+					fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Fr.Wa./Rain: x2 (" + Math.floor(points) + ")";
 					console.log(fish[i].name + "- freshwater or misc multiplier (2.0): " + points);
 				}
 			}
