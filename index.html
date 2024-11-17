@@ -41,12 +41,35 @@
 			font-family: monospace;
 			font-size: 10px;
 		}
+		#divider_container {
+			/* display: flex;
+			flex-direction: row;
+            align-items: center; */
+			width: 100%;
+			/* height: 100%; */
+		}
+		#fish_container_cell {
+			min-width: 75%;
+			vertical-align: top;
+		}
+		#stored_fish_container_cell {
+			width: 160px;
+			/* background-color: rgb(93, 100, 119); */
+			background-color: rgb(44, 48, 58);
+			vertical-align: top;
+		}
+		#stored_fish_actual_container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+            align-items: center;
+		}
 	</style>
 </head>
 <body>
 	<div class="inputs_container">
 		<div class="radio_stars">
-			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true">
+			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true" id="era_pic">
 			<div class="version_text">
 				<span>fish_updated:</span><span id="fish_set_version"></span><br />
 				<span>page_updated:</span><span id="page_version"></span>
@@ -95,10 +118,22 @@
 		</div>
 	</div>
 	<br />
-	<div id="fish_container">
-
+	<table id="divider_container">
+		<tr>
+			<td id="fish_container_cell"><div id="fish_container"></div></td>
+			<td id="stored_fish_container_cell">
+				<div id="stored_fish_container">
+					<div style="text-align: center; padding-top: 15px;">
+						<b>ice box</b><br />
+						<span style="font-size: 12px;"><i>click to a fish to save/remove</i></span>
+					</div>
+					<div id="stored_fish_actual_container"></div>
+				</div>
+			</td>
+		</tr>
 	</div>
 	<script src="./fish.js"></script>
+	<script src="./saved_fish.js"></script>
 	<script src="./corefish_scoring.js"></script>
 </body>
 </html>

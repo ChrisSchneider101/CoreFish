@@ -1,5 +1,5 @@
 
-var page_version = "11.15.24 (6)"
+var page_version = "11.17.24 (1)"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;
@@ -17,6 +17,8 @@ var stars_value = 0;
 var search_value = "";
 var calc_value = false;
 
+//const era_voice = new Audio('sfx/cmon_kai.mp3');
+const era_voice = new Audio('https://github.com/ChrisSchneider101/CoreFish/blob/main/sfx/cmon_kai.mp3?raw=true');
 
 function onChangeSizeInput() {
 	var size = parseFloat(document.getElementById("size_input").value);
@@ -123,7 +125,7 @@ function updateFishContainer() {
 				case "Junk":
 					water_mult = junk_mult;
 					water_tag = "Junk";
-					water_pool = "Misc";
+					water_pool = "Junk";
 					break;
 				default:
 					console.log("INVALID WATER SOURCE")
@@ -164,9 +166,8 @@ function updateFishContainer() {
 			if (calc_value) fish_div.appendChild(fish_points_calc);
 
 			fish_div.addEventListener("click", function(event) {
-				//console.log("hit");
 				var fish_item = event.target.closest('.fish_item');
-				console.log(fish_item);
+				appendFishItem(fish_item);
 			})
 
 			fish_container.appendChild(fish_div);
@@ -186,6 +187,10 @@ for (i=0; i<stars_input.length; i++) {
 for (i=0; i<size_measurement_input.length; i++) {
 	size_measurement_input[i].addEventListener("click",onChangeSizeMeasurementInput);
 }
+
+document.getElementById("era_pic").addEventListener("click", function() {
+	era_voice.play();
+})
 
 
 // start with fish table populated
