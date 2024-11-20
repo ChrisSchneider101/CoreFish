@@ -1,4 +1,4 @@
-fish_set_version="11.19.24"
+fish_set_version="11.20.24"
 
 saltwater_mult = 1;
 freshwater_mult = 2;
