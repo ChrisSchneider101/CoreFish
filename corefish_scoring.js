@@ -135,7 +135,7 @@ function updateFishContainer() {
 					break;
 			}
 			points = points * water_mult;
-			if (water_mult != 1) {
+			if ((water_mult != 1) && (fish[i].name == "Leedsichthys")) {
 				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />" + water_pool + ": x" + water_mult + " (" + Math.floor(points) + ")";
 			}
 			console.log(fish[i].name + "- water mult (" + water_mult + "): " + points + " (" + water_tag + ")");	

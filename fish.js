@@ -1,10 +1,10 @@
-fish_set_version="11.15.24"
+fish_set_version="11.19.24"
 
 saltwater_mult = 1;
 freshwater_mult = 2;
-rain_mult = 2;
+rain_mult = 1.5;
 alien_mult = 2;
-void_mult = 2;
+void_mult = 1.5;
 junk_mult = 0;
 
 fish = [
@@ -131,7 +131,7 @@ fish = [
 	{
 	  "name": "Mooneye",
 	  "water": "Freshwater",
-	  "unique_mult": 5,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/f/fc/Mooneye.png/100px-Mooneye.png"
 	},
 	{
@@ -329,7 +329,7 @@ fish = [
 	{
 	  "name": "Sawfish",
 	  "water": "Saltwater",
-	  "unique_mult": 1,
+	  "unique_mult": 3,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/ba/Sawfish.png/100px-Sawfish.png"
 	},
 	{
@@ -471,9 +471,9 @@ fish = [
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/91/Unidentified_Fish_Object.png/100px-Unidentified_Fish_Object.png"
 	},
 	{
-		"name": "CREATURE",
-		"water": "Void",
-		"unique_mult": 1,
-		"img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
+	  "name": "CREATURE",
+	  "water": "Void",
+	  "unique_mult": 1,
+	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
 	}
 ]

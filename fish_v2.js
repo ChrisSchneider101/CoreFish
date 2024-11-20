@@ -1,10 +1,10 @@
-fish_set_version="11.15.24"
+fish_set_version="11.19.24"
 
 saltwater_mult = 1;
 freshwater_mult = 2;
-rain_mult = 2;
+rain_mult = 1.5;
 alien_mult = 2;
-void_mult = 2;
+void_mult = 1.5;
 junk_mult = 0;
 
 fish = [
