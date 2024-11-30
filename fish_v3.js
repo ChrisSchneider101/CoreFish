@@ -1,10 +1,10 @@
-fish_set_version="11.27.24"
+fish_set_version="11.20.24"
 
 saltwater_mult = 1;
-freshwater_mult = 3;
-rain_mult = 3;
-alien_mult = 3;
-void_mult = 3;
+freshwater_mult = 2;
+rain_mult = 1.5;
+alien_mult = 2;
+void_mult = 1.5;
 junk_mult = 0;
 
 fish = [
@@ -17,7 +17,7 @@ fish = [
 	{
 	  "name": "Axolotl",
 	  "water": "Freshwater",
-	  "unique_mult": 12,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/9/91/Axolotl.png/100px-Axolotl.png"
 	},
 	{
@@ -89,13 +89,13 @@ fish = [
 	{
 	  "name": "Gar",
 	  "water": "Freshwater",
-	  "unique_mult": 1.5,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/c/c6/Gar.png/100px-Gar.png"
 	},
 	{
 	  "name": "Golden Bass",
 	  "water": "Freshwater",
-	  "unique_mult": 15,
+	  "unique_mult": 10,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/b4/Golden_Bass.png/100px-Golden_Bass.png"
 	},
 	{
@@ -119,7 +119,7 @@ fish = [
 	{
 	  "name": "Koi",
 	  "water": "Freshwater",
-	  "unique_mult": 8,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/6/66/Koi.png/100px-Koi.png"
 	},
 	{
@@ -131,13 +131,13 @@ fish = [
 	{
 	  "name": "Mooneye",
 	  "water": "Freshwater",
-	  "unique_mult": 12,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/f/fc/Mooneye.png/100px-Mooneye.png"
 	},
 	{
 	  "name": "Muskellunge",
 	  "water": "Freshwater",
-	  "unique_mult": 2,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/1/15/Muskellunge.png/100px-Muskellunge.png"
 	},
 	{
@@ -155,7 +155,7 @@ fish = [
 	{
 	  "name": "Pupfish",
 	  "water": "Freshwater",
-	  "unique_mult": 12,
+	  "unique_mult": 8,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/f/fd/Pupfish.png/100px-Pupfish.png"
 	},
 	{
@@ -185,13 +185,13 @@ fish = [
 	{
 	  "name": "Toad",
 	  "water": "Freshwater",
-	  "unique_mult": 8,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/c/c9/Toad.png/100px-Toad.png"
 	},
 	{
 	  "name": "Turtle",
 	  "water": "Freshwater",
-	  "unique_mult": 8,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/e/e9/Turtle.png/100px-Turtle.png"
 	},
 	{
@@ -473,7 +473,7 @@ fish = [
 	{
 	  "name": "CREATURE",
 	  "water": "Void",
-	  "unique_mult": 2,
+	  "unique_mult": 1,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
 	}
 ]
