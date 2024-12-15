@@ -1,5 +1,5 @@
 
-var page_version = "11.20.24 (2)"
+var page_version = "12.15.24"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;
@@ -134,8 +134,8 @@ function updateFishContainer() {
 					water_pool = "is there water here";
 					break;
 			}
-			points = points * water_mult;
 			if ((water_mult != 1) && (fish[i].name != "Leedsichthys")) {
+				points = points * water_mult;
 				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />" + water_pool + ": x" + water_mult + " (" + Math.floor(points) + ")";
 			}
 			console.log(fish[i].name + "- water mult (" + water_mult + "): " + points + " (" + water_tag + ")");	
