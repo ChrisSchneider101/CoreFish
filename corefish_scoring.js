@@ -1,5 +1,5 @@
 
-var page_version = "12.15.24"
+var page_version = "12.30.24"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;

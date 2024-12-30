@@ -1,0 +1,378 @@
+<html>
+<head>
+	<title>corefish flip</title>
+	<style>
+		html {
+            scroll-behavior: smooth;
+        }
+		body {
+			background-color: rgb(56, 62, 78);
+			color: whitesmoke;
+			font-family: 'Trebuchet MS', sans-serif;
+		}
+		#size_input {
+			width: 6em;
+		}
+		.radio_stars_container {
+            display: flex;
+            justify-content: space-around;
+        }
+		.inputs_container {
+			display: flex;
+			flex-direction: row;
+            align-items: center;
+		}
+		#fish_container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+            align-items: center;
+		}
+		.fish_item {
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+			padding: 10px;
+		}
+		.version_text {
+			text-align: left;
+			font-family: monospace;
+			font-size: 10px;
+		}
+		
+		#fish_container_cell {
+			min-width: 75%;
+			vertical-align: top;
+		}
+		#stored_fish_container_cell {
+			width: 160px;
+			/* background-color: rgb(93, 100, 119); */
+			background-color: rgb(44, 48, 58);
+			vertical-align: top;
+		}
+		#stored_fish_actual_container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+            align-items: center;
+		}
+		#top_bar {
+			text-align: center;
+		}
+		.divider_container_td_margin {
+			width: 20%;
+			/* background-color: rgb(93, 100, 119); */
+			vertical-align: top;
+		}
+		.divider_container_td_main {
+			width: 60%;
+			/* background-color: rgb(93, 100, 119); */
+			background-color: rgb(44, 48, 58);
+			vertical-align: top;
+		}
+		.divider_container {
+			/* display: flex;
+			flex-direction: row;
+            align-items: center; */
+			width: 100%;
+			/* height: 100%; */
+		}
+		#era_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		#hof_bar {
+			text-align: center;
+			font-family: 'Times New Roman';
+			margin-top: 30px;
+			font-size: 60px;
+			font-style: bold;
+		}
+		.hof_entry_tr {
+			height: 400px;
+		}
+		.hof_entry_td_image_td {
+			width: 75%;
+		}
+		.hof_entry_td_info_td {
+			width: 25%;
+		}
+		.hof_entry_td_img {
+			height: 400px;
+		}
+		.generic_flexbox_container {
+			display: flex;
+			height: 100%;
+			width: 100%;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+		}
+		.generic_flexbox_container_no_height_col {
+			display: flex;
+			width: 100%;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+		}
+		.generic_flexbox_container_no_height_row {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			justify-content: center;
+            align-items: center;
+		}
+		#special_thanks_box {
+			display: flex;
+			width: 100%;
+			flex-direction: row;
+			justify-content: center;
+            align-items: center;
+			gap: 10px;
+		}
+		.special_thanks_item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+		}
+		.flexbox_start_align {
+            align-items: start;
+			text-align: center;
+		}
+		.flexbox_end_align {
+            align-items: end;
+			text-align: center;
+		}
+		.textalign_left {
+			text-align: left;
+		}
+		.textalign_right {
+			text-align: right;
+		}
+		.margin_info_left {
+			margin-left: 40px;
+		}
+		.margin_info_right {
+			margin-right: 40px;
+		}
+		a {
+			color: whitesmoke;
+		}
+		a:visited {
+			color: whitesmoke;
+		}
+		a:hover {
+			color: rgba(245, 245, 245, 0.822);
+		}
+	</style>
+</head>
+<body>
+	<div id="top_bar">
+		<div id="era_box">
+			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true" id="era_pic">
+			<div class="version_text">
+				<span>page_updated:</span><span id="page_version"></span>
+			</div>
+		</div>
+		<div class="generic_flexbox_container_no_height_col" style="margin-top: 8px;">
+			<a href="index.html">
+				Back to Tool
+			</a>
+		</div>
+		<div class="generic_flexbox_container_no_height_row">
+			<img style="height: 80px;" src="img\hof-flair.png">
+			<div id="hof_bar">
+				Hall of Fame
+			</div>
+			<img style="height: 80px; transform: scaleX(-1)" src="img\hof-flair.png">
+		</div>
+	</div>
+	<br />
+	<table class="divider_container">
+		<tr>
+			<td class="divider_container_td_margin"></td>
+			<td class="divider_container_td_main">
+				<div class="divider_container">
+
+					<table class="divider_container">
+						<tr class="hof_entry_tr">
+							<td class="hof_entry_td_image_td">
+								<div class="generic_flexbox_container flexbox_start_align">
+									<img class="hof_entry_td_img" src="img\2024-12-24.png">
+									<!--
+									<img class="hof_entry_td_img" src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/2024-12-24.png?raw=true">
+									-->
+								</div>
+							</td>
+							<td class="hof_entry_td_info_td">
+								<div class="textalign_right margin_info_right">
+									<br />
+									<br />
+									
+
+									<b>12/22/24</b><br />
+									Dashetoboba<br /><br />
+									<b>Axolotl</b><br />
+									Radiant (****)<br />
+									51.1cm<br />
+									<i>5508</i>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="divider_container">
+						<tr class="hof_entry_tr">
+							<td class="hof_entry_td_info_td">
+								<div class="textalign_left margin_info_left">
+									<b>12/15/24</b><br />
+									stepswitcher<br /><br />
+									<b>Alligator</b><br />
+									Radiant (****)<br />
+									408.41cm<br />
+									<i>7351</i>
+								</div>
+							</td>
+							<td class="hof_entry_td_image_td">
+								<div class="generic_flexbox_container flexbox_end_align">
+									<img class="hof_entry_td_img" src="img\2024-12-15.png">
+									<!--
+									<img class="hof_entry_td_img" src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/2024-12-15.png?raw=true">
+									-->
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="divider_container">
+						<tr class="hof_entry_tr">
+							<td class="hof_entry_td_info_td">
+								<div class="textalign_left margin_info_left">
+									<i>special mention</i><br /><br />
+									<b>12/15/24</b><br />
+									Dashetoboba<br /><br />
+									<b>Leedsichthys</b><br />
+									Opulent (***)<br />
+									7061.02cm<br />
+									<i>8826</i><br /><br />
+									<i>(bro didnt hit f12 lmao)</i>
+								</div>
+							</td>
+							<td class="hof_entry_td_image_td">
+								<div class="generic_flexbox_container flexbox_end_align">
+									<img class="hof_entry_td_img" src="img\2024-12-15-sm.png">
+									<!--
+									<img class="hof_entry_td_img" src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/2024-12-15-sm.png?raw=true">
+									-->
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="divider_container">
+						<tr class="hof_entry_tr">
+							<td class="hof_entry_td_image_td">
+								<div class="generic_flexbox_container flexbox_start_align">
+									<img class="hof_entry_td_img" src="img\2024-11-22.png">
+									<!--
+									<img class="hof_entry_td_img" src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/2024-11-22.png?raw=true">
+									-->
+								</div>
+							</td>
+							<td class="hof_entry_td_info_td">
+								<div class="textalign_right margin_info_right">
+									<b>11/22/24</b><br />
+									ziziwhat<br /><br />
+									<b>Hammerhead Shark</b><br />
+									Radiant (****)<br />
+									521.29cm<br />
+									<i>2345</i>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table class="divider_container">
+						<tr class="hof_entry_tr">
+							<td class="hof_entry_td_info_td">
+								<div class="textalign_left margin_info_left">
+									<b>11/03/24</b><br />
+									Aylalira<br /><br />
+									<b>Unidentified Fish Object</b><br />
+									Opulent (***)<br />
+									198.81cm<br />
+									<i>5964</i>
+								</div>
+							</td>
+							<td class="hof_entry_td_image_td">
+								<div class="generic_flexbox_container flexbox_end_align">
+									<img class="hof_entry_td_img" src="img\2024-11-03.png">
+									<!--
+									<img class="hof_entry_td_img" src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/2024-11-03.png?raw=true">
+									-->
+								</div>
+							</td>
+						</tr>
+					</table>
+					
+				</div>
+			</td>
+			<td class="divider_container_td_margin"></td>
+		</tr>
+	</table>
+	<div class="generic_flexbox_container_no_height_row">
+		<img style="height: 40px" src="img\hof-flair.png">
+		<div style="font-family: 'Times New Roman'; font-size: 32px; margin-top: 16px">
+			Special Thanks
+		</div>
+		<img style="height: 40px;  transform: scaleX(-1)" src="img\hof-flair.png">
+	</div>
+	<div id="special_thanks_box">
+		<div class="special_thanks_item">
+			<img style="height: 280; margin-top: 20px" src="img\brickbat.PNG">
+			<!--
+			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/brickbat.PNG?raw=true">
+			-->
+			<div style="font-size: 16px; margin-top: 4px">
+				Brickbat
+			</div>
+			<div style="font-size: 10px">
+				<i>thanks for organizing these!</i>
+			</div>
+		</div>
+		<div class="special_thanks_item">
+			<img style="height: 280px; margin-top: 20px" src="img\zzZ-webfishing.png">
+			<!--
+			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/zzZ-webfishing.png?raw=true">
+			-->
+			<div style="font-size: 16px; margin-top: 4px">
+				zzZ
+			</div>
+			<div style="font-size: 10px">
+			<i>thanks for letting me steal this image without permission!</i>
+			</div>
+		</div>
+		<div class="special_thanks_item">
+			<img style="height: 280; margin-top: 20px" src="img\era2.png">
+			<!--
+			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era2.png?raw=true">
+			-->
+			<div style="font-size: 16px; margin-top: 4px">
+				Era
+			</div>
+			<div style="font-size: 10px">
+				<i>honest, hard working character!</i>
+			</div>
+		</div>
+	</div>
+	<div class="generic_flexbox_container_no_height_col">
+		<br /><br />
+		<a id="back_to_top" href="#top_bar">
+			Back to Top
+		</a>
+	</div>	
+	<script src="./hall-of-fame.js"></script>
+</body>
+</html>
