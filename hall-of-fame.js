@@ -1,4 +1,4 @@
-var page_version = "12.30.24"
+var page_version = "01.05.25"
 
 document.getElementById("page_version").innerText = page_version;
 
