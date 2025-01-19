@@ -1,5 +1,5 @@
 
-var page_version = "12.30.24"
+var page_version = "01.19.25"
 
 document.getElementById("fish_set_version").innerText = fish_set_version;
 document.getElementById("page_version").innerText = page_version;
@@ -87,9 +87,9 @@ function updateFishContainer() {
 
 			// whale / leed deduction
 			if ((fish[i].name == "Whale") || (fish[i].name == "Leedsichthys")) {
-				points = points / 2;
-				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Leed/Whale: x0.5 (" + Math.floor(points) + ")";
-				console.log(fish[i].name + "- half base points for whale/leedsichthys: " + points);
+				points = points * 0.75;
+				fish_points_calc.innerHTML = fish_points_calc.innerHTML + "<br />Leed/Whale: x0.75 (" + Math.floor(points) + ")";
+				console.log(fish[i].name + "- deducted base points for whale/leedsichthys: " + points);
 			}
 
 			// water bonus

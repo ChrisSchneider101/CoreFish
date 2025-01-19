@@ -1,4 +1,4 @@
-fish_set_version="01.19.25"
+fish_set_version="01.05.25"
 
 saltwater_mult = 1;
 freshwater_mult = 2.5;
@@ -89,7 +89,7 @@ fish = [
 	{
 	  "name": "Gar",
 	  "water": "Freshwater",
-	  "unique_mult": 2,
+	  "unique_mult": 1.5,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/c/c6/Gar.png/100px-Gar.png"
 	},
 	{
@@ -137,7 +137,7 @@ fish = [
 	{
 	  "name": "Muskellunge",
 	  "water": "Freshwater",
-	  "unique_mult": 3,
+	  "unique_mult": 2,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/1/15/Muskellunge.png/100px-Muskellunge.png"
 	},
 	{
@@ -473,7 +473,7 @@ fish = [
 	{
 	  "name": "CREATURE",
 	  "water": "Void",
-	  "unique_mult": 3,
+	  "unique_mult": 2,
 	  "img_src": "https://webfishing.wiki.gg/images/thumb/b/be/CREATURE.gif/100px-CREATURE.gif"
 	}
 ]
