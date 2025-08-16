@@ -64,6 +64,17 @@
 			flex-direction: column;
             align-items: center;
 		}
+		#era_container {
+			position: relative;
+			display: inline-block;
+		}
+		#era_overlay_item
+		{
+			position: absolute;
+			top: 100px;
+			left: -19px;
+			pointer-events: none;
+		}
 		a {
 			color: whitesmoke;
 		}
@@ -78,7 +89,10 @@
 <body>
 	<div class="inputs_container">
 		<div class="radio_stars">
-			<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true" id="era_pic">
+			<div id="era_container">
+				<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/era.PNG?raw=true" id="era_pic" style="display:block">
+				<img src="https://github.com/ChrisSchneider101/CoreFish/blob/main/img/chikara_pnging.png?raw=true" id="era_overlay_item">
+			</div>
 			<div class="version_text">
 				<span>fish_updated:</span><span id="fish_set_version"></span><br />
 				<span>page_updated:</span><span id="page_version"></span>
